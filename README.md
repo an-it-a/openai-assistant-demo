@@ -10,7 +10,6 @@ And follow my [Instagram account](https://www.instagram.com/iam.an.it.a/).
 
 - Python 3
 - Flask
-- Paramiko
 - OpenAI API key
 - Assistant ID
 
