@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OpenAI Assistant Demo</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="container">
+        <div id="button-container">
+            <button id="new-thread-btn">Clear</button>
+        </div>
+        <div id="history-container">
+            <div id="message-container"></div>
+        </div>
+        <div id="prompt-container">
+            <textarea id="prompt-input" placeholder="Enter your message..."></textarea>
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
