@@ -31,7 +31,7 @@ function sendPrompt(threadId, prompt) {
     .catch((error) => {
         enableSendButton();
         console.error("Error: ", error);
-        appendLog("Error sending message");
+        appendLog("Error sending message: " + error);
     });
 }
 

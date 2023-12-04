@@ -47,7 +47,7 @@ def send():
         assistant_id=assistant_id
         )
 
-        while run.status != "completed":
+        while run.status != "completed" and run.status != "failed":
             print("Run Status: " + run.status)
             run = openai.beta.threads.runs.retrieve(
             thread_id=thread_id,
@@ -58,9 +58,12 @@ def send():
             if run.status == "requires_action":
                 print(run.required_action.submit_tool_outputs.tool_calls)
 
-            time.sleep(.2) # Sleep and check run status again
+            time.sleep(10) # Sleep and check run status again
 
         print("Run Status: " + run.status)
+
+        if run.status == "failed":
+            return jsonify(str(run.last_error.message)), 500
 
         msgs = openai.beta.threads.messages.list(thread_id)
 
