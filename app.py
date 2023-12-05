@@ -58,7 +58,7 @@ def send():
             if run.status == "requires_action":
                 print(run.required_action.submit_tool_outputs.tool_calls)
 
-            time.sleep(10) # Sleep and check run status again
+            time.sleep(.3) # Sleep and check run status again
 
         print("Run Status: " + run.status)
 
